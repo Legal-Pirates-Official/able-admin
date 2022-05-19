@@ -51,7 +51,6 @@ const LiveEventsDetails = ({
       })
         .then(async (r) => {
           let data = await r.json();
-          console.log(data.secure_url);
           setPhoto(data.secure_url);
         })
         .catch((err) => console.log(err));

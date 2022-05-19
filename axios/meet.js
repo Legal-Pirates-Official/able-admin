@@ -4,7 +4,6 @@ import { baseurl } from '../environment';
 export const addSlot = async (dates, values, meetLink, email) => {
 	// var json = JSON.stringify(values);
 	try {
-		console.log(dates, 'p', values, 'll');
 		return await axios
 			.post(`${baseurl}/meet/addslot`, {
 				time_slot: values,
@@ -13,7 +12,6 @@ export const addSlot = async (dates, values, meetLink, email) => {
 				email: email
 			})
 			.then((res) => {
-				console.log(res.data);
 				return res.data;
 			});
 	} catch (error) {
@@ -22,15 +20,12 @@ export const addSlot = async (dates, values, meetLink, email) => {
 };
 
 export const getSlot = async (date) => {
-	console.log(date, 'p');
 	try {
-		// console.log(dates,'p',values,'ll');
 		return await axios
 			.post(`${baseurl}/meet/getslot/`, {
 				date
 			})
 			.then((res) => {
-				console.log(res.data);
 				return res.data;
 			});
 	} catch (error) {
@@ -39,11 +34,8 @@ export const getSlot = async (date) => {
 };
 
 export const getRequest = async () => {
-	console.log('s', 'p');
 	try {
-		// console.log(dates,'p',values,'ll');
 		return await axios.get(`${baseurl}/admin/request`).then((res) => {
-			console.log(res.data);
 			return res.data;
 		});
 	} catch (error) {
@@ -52,9 +44,7 @@ export const getRequest = async () => {
 };
 
 export const sendMail = async (email, name, date, timeslot, slots) => {
-	console.log(email, name, date, timeslot, 'p');
 	try {
-		// console.log(dates,'p',values,'ll');
 		return await axios
 			.post(`${baseurl}/meet/mail/`, {
 				email,
@@ -64,7 +54,6 @@ export const sendMail = async (email, name, date, timeslot, slots) => {
 				slots
 			})
 			.then((res) => {
-				console.log(res.data);
 				return res.data;
 			});
 	} catch (error) {
@@ -84,7 +73,6 @@ export const mailer = async (email, timeslot, date) => {
 			if (err) {
 				console.log(err);
 			} else {
-				console.log(res);
 			}
 		}
 	);
@@ -120,7 +108,6 @@ export const rejectRequest = async (email, date) => {
 			if (err) {
 				console.log(err);
 			} else {
-				console.log(res);
 			}
 		}
 	);

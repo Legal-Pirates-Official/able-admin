@@ -15,12 +15,10 @@ const RegisterScreen = ({ navigation }) => {
 
 	const handleSighup = ({ navigation }) => {
 		// const email1 = email .getText().toString().trim()
-		console.log('email: ', typeof email);
 		auth
 			.createUserWithEmailAndPassword(email.trim(), password)
 			.then((userCredential) => {
 				const user = userCredential.user;
-				console.log('user: ', user);
 				navigation.push('AdminMainPage');
 			})
 			.catch((error) => {

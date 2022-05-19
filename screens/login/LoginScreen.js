@@ -21,7 +21,6 @@ const LoginScreen = ({navigation}) => {
                 if (user) {
                     navigation.push("AdminMainPage");
                 }
-                console.log(user);
             })
             .catch((error) => {
                 const errorCode = error.code;

@@ -13,17 +13,12 @@ const ShowRequests = () => {
   useEffect(() => {
     getRequest().then((res) => {
       res.forEach((item) => {
-        console.log(item,'ll')
         if(item.booked_slot == null) {
-          console.log('null');
           return;
         } else {
-          console.log('not null',item.booked_slot);
           var json1 = JSON.parse(item.booked_slot);
           json1.forEach((element) => {
-            console.log(JSON.parse(JSON.stringify(element)), "ele");
             setJson((prev) => {
-              console.log(prev, "prev");
               return [...prev, element];
             });
           });
@@ -51,7 +46,6 @@ const ShowRequests = () => {
       }}><>
       {Object(json).length?
       (Object(json).map((item) =>{
-        console.log(item,'item');
          return (
           <View style={styles.card}>
             <View style={styles.row}>

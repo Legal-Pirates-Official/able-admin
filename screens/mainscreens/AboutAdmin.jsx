@@ -74,9 +74,7 @@ const AboutAdmin = ({ about }) => {
 			}}
 			validationSchema={about_schema}
 			onSubmit={async (values) => {
-				console.log(values);
 				await postAbout(values, photo).then((res) => {
-					console.log(res);
 				});
 			}}
 		>

@@ -31,12 +31,10 @@ const Meet = ({ navigation }) => {
   });
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const hideDatePicker = () => {
-    console.log(dates, "da");
     setDatePickerVisibility(false);
   };
 
   const handleConfirm = (date) => {
-    console.log("A date has been picked: ", date);
     var strng = date.toLocaleString();
     setDates(strng.slice(0, strng.indexOf(",")));
     hideDatePicker();
@@ -51,7 +49,6 @@ const Meet = ({ navigation }) => {
     }
   }
   const handleLink = async () => {
-    console.log(meetLink, email, password, "ss");
     setLinkVisible(true);
   };
   const handleMeetSubmit = async () => {
@@ -77,9 +74,7 @@ const Meet = ({ navigation }) => {
         // validationSchema={forecast_type_schema}
         validateOnMount={true}
         onSubmit={async (values) => {
-          console.log(dates, "ki");
           await addSlot(dates, values, meetLink, email);
-          console.log(values);
         }}
       >
         {({ handleChange, handleBlur, handleSubmit, values, isValid }) => (
@@ -133,12 +128,10 @@ const Meet = ({ navigation }) => {
                     style={styles.btn}
                     onPress={() => {
                       setNoOfSlots([...noOfSlots, 1]);
-                      console.log(noOfSlots.length);
                       const initial = new InitialFormValuesClass(
                         parseInt(noOfSlots.length + 1)
                       );
                       setInitialFormValues(initial);
-                      console.log(initial);
                     }}
                   >
                     <Text>Add Time slot</Text>

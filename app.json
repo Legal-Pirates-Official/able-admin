@@ -2,7 +2,7 @@
   "expo": {
     "name": "Able-ADMIN",
     "slug": "able-admin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon1.png",
     "splash": {
@@ -21,7 +21,7 @@
     },
     "android": {
       "package": "com.yuplez.ableadmin",
-      "versionCode": 1,
+      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon1.png",
         "backgroundColor": "#FFFFFF"

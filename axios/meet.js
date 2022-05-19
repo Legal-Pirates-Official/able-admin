@@ -1,7 +1,6 @@
 const axios = require('axios');
 import { baseurl } from '../environment';
 
-
 export const addSlot = async (dates, values, meetLink, email) => {
 	// var json = JSON.stringify(values);
 	try {
